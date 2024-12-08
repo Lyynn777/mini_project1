@@ -1,0 +1,181 @@
+/* General body styling with pastel gradient background in shades of blue */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #cce7ff, #a2c8f4); /* Soft blue gradient */
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+h1, h2 {
+    color: #1e3a8a; /* Dark blue for headings */
+    text-align: center;
+}
+
+/* Form input fields */
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    width: calc(100% - 22px);
+    border-radius: 4px;
+    border: 1px solid #90cdf4; /* Light blue border */
+    background-color: #f0f9ff; /* Very light blue background */
+}
+
+/* Button styles with pastel blue and contrasting coral color */
+button {
+    padding: 10px;
+    background-color: #38bdf8; /* Light blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0ea5e9; /* Darker blue on hover */
+}
+
+/* List styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List item styling */
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f3f9ff; /* Soft light blue background */
+    border-radius: 5px;
+}
+
+/* To-Do List specific styles */
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+/* Budget Tracker styling */
+#budget-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#description, #amount, #type {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e0f7fa; /* Light cyan (a contrast to blue) */
+    border-radius: 4px;
+}
+
+#transaction-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f3f9ff; /* Light blue background */
+}
+
+#budget-summary {
+    margin-top: 20px;
+}
+
+/* Call-to-action button in coral for contrast */
+.cta-button {
+    padding: 10px;
+    background-color: #ff6f61; /* Coral (contrasting accent color) */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #ff4d3f; /* Darker coral on hover */
+}
+
+/* Navbar with pastel blue */
+.navbar {
+    background-color: #0077b6; /* Strong blue */
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Gratitude section */
+#gratitude-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#gratitude-input {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e0f7fa; /* Light cyan */
+    border-radius: 5px;
+}
+
+.cta-button {
+    padding: 10px;
+    background-color: #ff6f61; /* Coral */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #ff4d3f; /* Darker coral */
+}
+
+/* Gratitude list styling */
+#gratitude-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f8e9; /* Light pastel green */
+    border-radius: 5px;
+}
+
+/* Footer with pastel styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #38bdf8; /* Light blue */
+    color: white;
+    position: relative;
+}

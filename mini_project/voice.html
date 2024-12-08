@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <script>
+        // Web Speech API for Speech Recognition
+        var recognition;
+        var isRecognizing = false;
+
+        function startVoiceRecognition() {
+            if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+                recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.continuous = false; // stop after one phrase
+                recognition.lang = 'en-US'; // Set language
+                recognition.interimResults = false; // Only final results
+
+                recognition.onstart = function() {
+                    isRecognizing = true;
+                    console.log('Voice recognition started');
+                };
+
+                recognition.onresult = function(event) {
+                    var command = event.results[0][0].transcript.toLowerCase();
+                    console.log("Voice command received: " + command);
+
+                    // Process the command
+                    processCommand(command);
+                };
+
+                recognition.onend = function() {
+                    isRecognizing = false;
+                    console.log('Voice recognition stopped');
+                };
+
+                recognition.onerror = function(event) {
+                    console.error("Error occurred in recognition: " + event.error);
+                };
+
+                recognition.start();
+            } else {
+                alert("Speech Recognition API is not supported in your browser.");
+            }
+        }
+
+        // Function to process recognized command and navigate
+        function processCommand(command) {
+            // Example of handling commands for navigation
+            if (command.includes("to-do")) {
+                window.location.href = "todo.html"; // Redirect to To-Do List page
+            } else if (command.includes("budget")) {
+                window.location.href = "budget.html"; // Redirect to Budget Tracker page
+            } else if (command.includes("gratitude")) {
+                window.location.href = "gratitude.html"; // Redirect to Gratitude List page
+            } else if (command.includes("events")) {
+                window.location.href = "events.html"; // Redirect to Event Countdown page
+            } else if (command.includes("home")) {
+                window.location.href = "index.html"; // Redirect to Home page
+            } else {
+                alert("Command not recognized. Try saying 'To-Do', 'Budget', 'Gratitude', 'Events', or 'Home'.");
+            }
+        }
+
+        // Start recognition when the page loads
+        window.onload = function() {
+            document.getElementById("start-voice").addEventListener("click", startVoiceRecognition);
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        #voice-output {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice Assistant</h1>
+    <p>Click the button below to start voice recognition and say commands like 'To-Do', 'Budget', 'Gratitude', or 'Events' to navigate through the website.</p>
+    <button id="start-voice" class="cta-button">Start Voice Assistant</button>
+    <div id="voice-output"></div>
+
+    <script>
+        // Optional: Output command to the screen
+        recognition.onresult = function(event) {
+            var command = event.results[0][0].transcript.toLowerCase();
+            document.getElementById("voice-output").innerHTML = "You said: " + command;
+            processCommand(command);
+        };
+    </script>
+</body>
+</html>

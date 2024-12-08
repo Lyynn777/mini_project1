@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude List</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="budget.html">Budget Tracker</a></li>
+            <li><a href="events.html">Event Countdown</a></li>
+        </ul>
+    </nav>
+
+    <img src="C:/Users/HOME/Desktop/webtec/miniproj/leaf1.png" alt="Leaf" class="leaf leaf-1">
+    <img src="C:/Users/HOME/Desktop/webtec/miniproj/leaf2.png" alt="Leaf" class="leaf leaf-2">
+    
+    <div class="container">
+        <h1>Gratitude List</h1>
+        <form id="gratitude-form">
+            <input type="text" id="gratitude-input" placeholder="What are you grateful for?" required>
+            <button type="submit" class="cta-button">Add Gratitude</button>
+        </form>
+
+        <h2>Your Gratitude Entries</h2>
+        <ul id="gratitude-list"></ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="gratitude.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,7 @@
+current loc it'll give notif
+Latitude: 12.966376 
+Longitude: 77.654059 
+
+notif= not near the supermarket
+const targetLat = 37.7749;  
+const targetLon = -122.4194;  
